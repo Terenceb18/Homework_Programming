@@ -16,6 +16,10 @@ public class PlayerRotation : MonoBehaviour
     {
         _positionMouse = _camera.ScreenToWorldPoint(Input.mousePosition);
 
+        Vector3 pos = _positionMouse - transform.position;
+        float rotz = Mathf.Atan2(pos.y, pos.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, rotz - 90);
+
     }
 
 
